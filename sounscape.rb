@@ -5,4 +5,14 @@ soundscape = {"kind"=>"playlist", "id"=>405726, "created_at"=>"2010/11/02 09:24:
  soundscape.keys
 
 
-soundscape[:kind][:id]
+ hmm = soundscape["tracks"].count
+hmm
+
+la = soundscape["tracks"]
+duration = 0
+la.each do |t|
+duration += t["duration_in_milliseconds"]
+end
+duration_minutes = duration / 60000.0
+
+p duration_minutes.round(2)
